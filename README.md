@@ -22,9 +22,10 @@
 在原有的`.log`指令之上添加了四种日志操作指令。
 
 效果展示
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696566139-94271-qq20231006122124.png]
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696566129-157250-atr94m6moj-25mq6rsm.png]
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696566171-859033-image.png]
+
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696566139-94271-qq20231006122124.png)
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696566129-157250-atr94m6moj-25mq6rsm.png)
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696566171-859033-image.png)
 
 ---
 
@@ -34,8 +35,7 @@
 > **LLOneBot 框架**配置方法参考下方第四节内容。
 > 如果你听不懂，也可以往下看第四五节的内容。
 
-下载，解压，将两个文件扔进扔进 plugin 文件夹。
-[upl-file uuid=f48b14ba-df15-459b-a4e7-f47a7f3983a1 size=4kB]log-ext.zip[/upl-file]
+下载，解压，将两个lua文件扔进扔进 plugin 文件夹。
 
 随后，手动打开`log_get`文件，修改第 8 行的端口值为你开启的 http 端口，并`.system load`
 
@@ -45,11 +45,11 @@
 
 打开 QQNT 的设置界面，在 LLOneBot 一栏中将**启用 http 服务**打开。
 下方的 http 服务监听端口即是服务启用的端口，可以在一定范围内修改为自己希望的数字。
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708845-691292-image.png]
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708845-691292-image.png)
 保存，随后别忘了重启 QQ。
 
 然后修改`log_get`文件中的第 8 行为对应的端口即可。
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708419-54636-image.png]
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708419-54636-image.png)
 
 > 很简单对吧 ;)
 
@@ -62,13 +62,13 @@
 
 手动打开`log_ext.lua`文件，将第 27 行最前面的`--`去掉。
 就像这样：
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708626-594558-image.png]
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708626-594558-image.png)
 
 然后，system load 一下，再然后对骰娘发送指令`.log http init`
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696567402-3889-e9oh-at-h58bvl7gfiic7v3.png]
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696567402-3889-e9oh-at-h58bvl7gfiic7v3.png)
 骰娘将会自动写入 http 连接配置，并将端口发送给你，像这里便是使用了 26194 端口。
 需要关掉骰娘程序，重新启动 gocq 以启用。
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696567690-666051-m-at-uq951mzvlidy-at-vfhqgp.png]
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2023-10-06/1696567690-666051-m-at-uq951mzvlidy-at-vfhqgp.png)
 当 gocq 启动时出现这一行字，即说明 http 连接启用成功。
 
 > 最后，别忘了修改`log_get.lua`文件内第 8 行的 http 端口为对应的值。
@@ -78,8 +78,8 @@
 ### 六.自定义回执
 
 手动修改`log_ext`文件第 8 到第 18 行，还有`log_get`文件第 10 到第 14 行.
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708744-606579-image.png]
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708771-675962-image.png]
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708744-606579-image.png)
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-04-21/1713708771-675962-image.png)
 
 > `log_ext`文件默认使用**GBK 编码**，`log_get`文件默认使用**utf-8 编码**。这是因为`log_ext`文件需要与 dice 所用的编码保持一致，而`log_get`文件需要与系统编码保持一致。
 > **若系统编码不为 GBK 且骰娘路径中带有中文字符很可能导致`.log list`指令读不出群聊 log 列表**
@@ -105,4 +105,4 @@
 ```
 
 如此，在骰娘收到`.log`指令时将会返回帮助：
-[upl-image-preview url=https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-09-11/1726014534-637743-qq20240911-082828.png]
+![image](https://dice-forum.s3.ap-northeast-1.amazonaws.com/2024-09-11/1726014534-637743-qq20240911-082828.png)
